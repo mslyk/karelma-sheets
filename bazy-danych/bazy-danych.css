@@ -545,3 +545,142 @@ html[data-theme="dark"] .topic-card {
     grid-template-columns: 1fr;
   }
 }
+
+.models-grid {
+  max-width: 800px;
+  margin: 24px 0 38px;
+  display: grid;
+  gap: 16px;
+}
+
+.model-card {
+  position: relative;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(135, 148, 94, 0.05);
+}
+
+.model-number {
+  color: var(--olive-500);
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+}
+
+.model-card h4 {
+  margin: 8px 0 12px;
+  font-size: 25px;
+  letter-spacing: -0.025em;
+}
+
+.model-card > p {
+  margin: 0;
+  max-width: 720px;
+}
+
+.mini-data {
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.mini-data code {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+}
+
+.hierarchy-example {
+  max-width: 520px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.hierarchy-example > div:not(.hierarchy-children) {
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+}
+
+.hierarchy-example > span {
+  display: block;
+  padding: 5px;
+  color: var(--olive-500);
+}
+
+.hierarchy-children {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.hierarchy-children span {
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  font-size: 12px;
+}
+
+.model-note {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--olive-500);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.network-example {
+  max-width: 620px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.network-node {
+  padding: 16px;
+  border: 1px solid var(--olive-500);
+  border-radius: 14px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.network-links {
+  display: grid;
+  gap: 8px;
+}
+
+.network-links span {
+  position: relative;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+}
+
+.network-links span::before {
+  content: "←";
+  position: absolute;
+  left: -16px;
+  color: var(--olive-500);
+}
+
+@media (max-width: 650px) {
+  .hierarchy-children {
+    grid-template-columns: 1fr;
+  }
+
+  .network-example {
+    grid-template-columns: 1fr;
+  }
+
+  .network-links span::before {
+    display: none;
+  }
+}

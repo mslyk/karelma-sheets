@@ -295,21 +295,149 @@
       jakie dane będą przechowywane i w jaki sposób będą ze sobą powiązane.
     </p>
 
-    <h3>Model danych</h3>
+    <h3>Modele baz danych</h3>
+
+<p>
+  <strong>Model danych</strong> określa sposób organizowania,
+  przechowywania oraz łączenia danych w bazie danych.
+</p>
+
+<div class="models-grid">
+
+  <div class="model-card">
+    <span class="model-number">01</span>
+
+    <h4>Model jednorodny</h4>
+
     <p>
-      <strong>Model danych</strong> opisuje strukturę bazy danych:
-      jakie obiekty będą w niej występować, jakie będą miały cechy
-      oraz jakie zależności zachodzą pomiędzy nimi.
+      Dane są przechowywane w jednakowej, prostej strukturze.
+      Wszystkie elementy mają taki sam zestaw pól.
     </p>
 
     <div class="example-box">
       <span class="example-label">Przykład</span>
       <p>
-        W bazie szkolnej możemy wyróżnić encje:
-        <strong>Uczeń</strong>, <strong>Klasa</strong>,
-        <strong>Nauczyciel</strong> i <strong>Przedmiot</strong>.
+        Lista uczniów zapisana jako zbiór rekordów:
+        imię, nazwisko, klasa i data urodzenia.
       </p>
     </div>
+
+    <div class="mini-data">
+      <code>Anna | Kowalska | 4TI | 2008-05-12</code>
+      <code>Jan | Nowak | 4TI | 2008-08-21</code>
+    </div>
+  </div>
+
+
+  <div class="model-card">
+    <span class="model-number">02</span>
+
+    <h4>Model hierarchiczny</h4>
+
+    <p>
+      Dane są uporządkowane w strukturę przypominającą
+      <strong>drzewo</strong>. Jeden element nadrzędny może posiadać
+      wiele elementów podrzędnych.
+    </p>
+
+    <div class="example-box">
+      <span class="example-label">Przykład</span>
+      <p>
+        Struktura szkoły: szkoła zawiera klasy,
+        a każda klasa zawiera uczniów.
+      </p>
+    </div>
+
+    <div class="hierarchy-example">
+      <div>Szkoła</div>
+      <span>↓</span>
+
+      <div>Klasa 4TI</div>
+      <span>↓</span>
+
+      <div class="hierarchy-children">
+        <span>Anna Kowalska</span>
+        <span>Jan Nowak</span>
+        <span>Piotr Wiśniewski</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="model-card">
+    <span class="model-number">03</span>
+
+    <h4>Model relacyjny</h4>
+
+    <p>
+      Dane są przechowywane w <strong>tabelach</strong>.
+      Tabele mogą być ze sobą powiązane za pomocą
+      kluczy głównych i obcych.
+    </p>
+
+    <div class="example-box">
+      <span class="example-label">Przykład</span>
+      <p>
+        Osobna tabela <strong>uczniowie</strong> oraz tabela
+        <strong>klasy</strong>. Uczeń jest połączony z klasą
+        za pomocą pola <strong>id_klasy</strong>.
+      </p>
+    </div>
+
+    <div class="relation-example">
+      <div class="relation-table">
+        <strong>uczniowie</strong>
+        <span>id_ucznia</span>
+        <span>imie</span>
+        <span>id_klasy</span>
+      </div>
+
+      <div class="relation-arrow">→</div>
+
+      <div class="relation-table">
+        <strong>klasy</strong>
+        <span>id_klasy</span>
+        <span>nazwa</span>
+      </div>
+    </div>
+
+    <div class="model-note">
+      To obecnie jeden z najczęściej stosowanych modeli baz danych.
+      Wykorzystują go m.in. MySQL, PostgreSQL i MariaDB.
+    </div>
+  </div>
+
+
+  <div class="model-card">
+    <span class="model-number">04</span>
+
+    <h4>Model sieciowy</h4>
+
+    <p>
+      Dane tworzą strukturę przypominającą <strong>sieć</strong>.
+      Jeden element może być powiązany z wieloma innymi elementami.
+    </p>
+
+    <div class="example-box">
+      <span class="example-label">Przykład</span>
+      <p>
+        Uczeń może należeć do wielu kół zainteresowań,
+        a każde koło może mieć wielu uczniów.
+      </p>
+    </div>
+
+    <div class="network-example">
+      <div class="network-node">Anna</div>
+
+      <div class="network-links">
+        <span>Koło programistyczne</span>
+        <span>Koło fotograficzne</span>
+        <span>Robotyka</span>
+      </div>
+    </div>
+  </div>
+
+</div>
 
     <h3>Diagram E/R</h3>
     <p>

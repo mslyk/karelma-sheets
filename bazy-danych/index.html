@@ -63,18 +63,226 @@
 
         <div class="subject-content">
 
-          <section class="topic-card" id="podstawy">
-            <div class="topic-number">01</div>
+          <section class="topic-card topic-notes" id="podstawy">
+  <div class="topic-number">01</div>
 
-            <div>
-              <h2>Podstawy baz danych</h2>
-              <p>
-                Tu pojawią się notatki dotyczące najważniejszych pojęć:
-                baza danych, tabela, rekord, pole, encja, atrybut, relacja,
-                klucz główny i klucz obcy.
-              </p>
-            </div>
-          </section>
+  <div class="topic-body">
+    <h2>Podstawy baz danych</h2>
+
+    <p class="topic-intro">
+      Baza danych to uporządkowany zbiór informacji, który umożliwia
+      ich przechowywanie, wyszukiwanie, modyfikowanie i usuwanie.
+    </p>
+
+    <h3>Baza danych</h3>
+    <p>
+      <strong>Baza danych</strong> to zbiór powiązanych ze sobą danych,
+      zapisanych w sposób umożliwiający ich łatwe przetwarzanie.
+    </p>
+
+    <div class="example-box">
+      <span class="example-label">Przykład</span>
+      <p>
+        Baza danych szkoły może przechowywać informacje o uczniach,
+        klasach, nauczycielach, przedmiotach i ocenach.
+      </p>
+    </div>
+
+    <h3>Tabela</h3>
+    <p>
+      <strong>Tabela</strong> przechowuje dane dotyczące jednego rodzaju
+      obiektów. Składa się z kolumn i wierszy.
+    </p>
+
+    <div class="simple-table">
+      <div class="table-row table-head">
+        <div>id_ucznia</div>
+        <div>imie</div>
+        <div>nazwisko</div>
+        <div>klasa</div>
+      </div>
+
+      <div class="table-row">
+        <div>1</div>
+        <div>Anna</div>
+        <div>Kowalska</div>
+        <div>4TI</div>
+      </div>
+
+      <div class="table-row">
+        <div>2</div>
+        <div>Jan</div>
+        <div>Nowak</div>
+        <div>4TI</div>
+      </div>
+    </div>
+
+    <h3>Rekord</h3>
+    <p>
+      <strong>Rekord</strong> to jeden wiersz tabeli. Zawiera komplet
+      informacji dotyczących jednego obiektu.
+    </p>
+
+    <div class="definition-line">
+      <span>Przykład rekordu:</span>
+      <code>1 | Anna | Kowalska | 4TI</code>
+    </div>
+
+    <h3>Pole</h3>
+    <p>
+      <strong>Pole</strong> to pojedyncza wartość znajdująca się
+      w tabeli na przecięciu wiersza i kolumny.
+    </p>
+
+    <div class="example-box">
+      <span class="example-label">Przykład</span>
+      <p>
+        Wartość <strong>Anna</strong> w kolumnie
+        <strong>imie</strong> jest jednym polem.
+      </p>
+    </div>
+
+    <h3>Encja</h3>
+    <p>
+      <strong>Encja</strong> to obiekt, o którym chcemy przechowywać
+      informacje w bazie danych.
+    </p>
+
+    <p>Przykładami encji mogą być:</p>
+
+    <ul class="note-list">
+      <li>uczeń,</li>
+      <li>nauczyciel,</li>
+      <li>samochód,</li>
+      <li>produkt,</li>
+      <li>zamówienie.</li>
+    </ul>
+
+    <h3>Atrybut</h3>
+    <p>
+      <strong>Atrybut</strong> to cecha opisująca encję.
+    </p>
+
+    <div class="example-box">
+      <span class="example-label">Przykład</span>
+      <p>
+        Dla encji <strong>Uczeń</strong> atrybutami mogą być:
+        imię, nazwisko, data urodzenia i klasa.
+      </p>
+    </div>
+
+    <h3>Klucz główny</h3>
+    <p>
+      <strong>Klucz główny</strong> (PRIMARY KEY) to pole lub zestaw pól,
+      które jednoznacznie identyfikują każdy rekord w tabeli.
+    </p>
+
+    <div class="definition-line">
+      <span>Przykład:</span>
+      <code>id_ucznia = 1</code>
+    </div>
+
+    <div class="important-box">
+      Każdy rekord powinien mieć inną wartość klucza głównego.
+    </div>
+
+    <h3>Klucz obcy</h3>
+    <p>
+      <strong>Klucz obcy</strong> (FOREIGN KEY) to pole, które odwołuje się
+      do klucza głównego znajdującego się w innej tabeli.
+    </p>
+
+    <p>
+      Dzięki kluczom obcym można tworzyć powiązania pomiędzy tabelami.
+    </p>
+
+    <div class="relation-example">
+      <div class="relation-table">
+        <strong>uczniowie</strong>
+        <span>id_ucznia</span>
+        <span>imie</span>
+        <span>id_klasy</span>
+      </div>
+
+      <div class="relation-arrow">→</div>
+
+      <div class="relation-table">
+        <strong>klasy</strong>
+        <span>id_klasy</span>
+        <span>nazwa</span>
+      </div>
+    </div>
+
+    <h3>Relacja</h3>
+    <p>
+      <strong>Relacja</strong> określa sposób powiązania danych
+      znajdujących się w różnych tabelach.
+    </p>
+
+    <p>Najczęściej spotykane rodzaje relacji:</p>
+
+    <div class="relation-grid">
+      <div>
+        <strong>1 : 1</strong>
+        <span>jeden do jednego</span>
+      </div>
+
+      <div>
+        <strong>1 : N</strong>
+        <span>jeden do wielu</span>
+      </div>
+
+      <div>
+        <strong>N : M</strong>
+        <span>wiele do wielu</span>
+      </div>
+    </div>
+
+    <h3>Najważniejsze pojęcia</h3>
+
+    <div class="summary-grid">
+      <div>
+        <strong>Baza danych</strong>
+        <span>uporządkowany zbiór danych</span>
+      </div>
+
+      <div>
+        <strong>Tabela</strong>
+        <span>zbiór rekordów tego samego typu</span>
+      </div>
+
+      <div>
+        <strong>Rekord</strong>
+        <span>jeden wiersz tabeli</span>
+      </div>
+
+      <div>
+        <strong>Pole</strong>
+        <span>pojedyncza wartość w tabeli</span>
+      </div>
+
+      <div>
+        <strong>Encja</strong>
+        <span>obiekt opisywany w bazie</span>
+      </div>
+
+      <div>
+        <strong>Atrybut</strong>
+        <span>cecha encji</span>
+      </div>
+
+      <div>
+        <strong>Klucz główny</strong>
+        <span>jednoznacznie identyfikuje rekord</span>
+      </div>
+
+      <div>
+        <strong>Klucz obcy</strong>
+        <span>łączy tabelę z inną tabelą</span>
+      </div>
+    </div>
+  </div>
+</section>
 
           <section class="topic-card placeholder" id="projektowanie">
             <div class="topic-number">02</div>

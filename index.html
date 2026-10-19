@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kompendium informatyczne — notatki z przedmiotów zawodowych." />
+  <title>Kompendium informatyczne</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Strona główna">
+        <span class="brand-mark">&lt;/&gt;</span>
+        <span class="brand-text">
+          <strong>Kompendium informatyczne</strong>
+          <small>Notatki z przedmiotów zawodowych</small>
+        </span>
+      </a>
+
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Zmień motyw">
+        <span class="theme-icon">☾</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">TECHNIK INFORMATYK</span>
+          <h1>Wybierz przedmiot</h1>
+          <p>
+            Krótkie definicje, najważniejsze informacje i przykłady
+            z tematów omawianych na zajęciach.
+          </p>
+        </div>
+
+        <div class="hero-badge" aria-hidden="true">
+          <span>4</span>
+          <small>przedmioty</small>
+        </div>
+      </section>
+
+      <section class="subjects" aria-label="Przedmioty">
+        <a class="subject-card databases" href="#" data-status="soon">
+          <div class="subject-top">
+            <span class="subject-icon">DB</span>
+            <span class="status">wkrótce</span>
+          </div>
+          <div>
+            <h2>Bazy danych</h2>
+            <p>Teoria i praktyka</p>
+          </div>
+          <div class="subject-footer">
+            <span>SQL · relacje · projektowanie</span>
+            <span class="arrow">→</span>
+          </div>
+        </a>
+
+        <a class="subject-card web" href="#" data-status="soon">
+          <div class="subject-top">
+            <span class="subject-icon">&lt;/&gt;</span>
+            <span class="status">wkrótce</span>
+          </div>
+          <div>
+            <h2>Witryny i aplikacje internetowe</h2>
+            <p>Teoria i praktyka</p>
+          </div>
+          <div class="subject-footer">
+            <span>HTML · CSS · JavaScript · PHP</span>
+            <span class="arrow">→</span>
+          </div>
+        </a>
+
+        <a class="subject-card hardware" href="#" data-status="soon">
+          <div class="subject-top">
+            <span class="subject-icon">PC</span>
+            <span class="status">wkrótce</span>
+          </div>
+          <div>
+            <h2>Urządzenia techniki komputerowej</h2>
+            <p>Teoria</p>
+          </div>
+          <div class="subject-footer">
+            <span>podzespoły · peryferia · diagnostyka</span>
+            <span class="arrow">→</span>
+          </div>
+        </a>
+
+        <a class="subject-card networks" href="#" data-status="soon">
+          <div class="subject-top">
+            <span class="subject-icon">LAN</span>
+            <span class="status">wkrótce</span>
+          </div>
+          <div>
+            <h2>Sieci komputerowe</h2>
+            <p>Teoria</p>
+          </div>
+          <div class="subject-footer">
+            <span>OSI · TCP/IP · adresacja · urządzenia</span>
+            <span class="arrow">→</span>
+          </div>
+        </a>
+      </section>
+
+      <section class="info-strip">
+        <div>
+          <strong>Jak korzystać?</strong>
+          <span>Wybierz przedmiot, a następnie temat z listy.</span>
+        </div>
+        <div>
+          <strong>Forma</strong>
+          <span>Definicje, składnia, przykłady i najczęstsze błędy.</span>
+        </div>
+        <div>
+          <strong>Bez ćwiczeń</strong>
+          <span>Ta strona ma być szybkim kompendium do powtórek.</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Kompendium informatyczne</span>
+      <span>Materiały pomocnicze do zajęć</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

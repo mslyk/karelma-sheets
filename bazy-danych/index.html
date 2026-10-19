@@ -8,758 +8,941 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="bazy-danych.css" />
 </head>
 
 <body>
+
   <div class="page subject-page">
+
+    <!-- HEADER -->
     <header class="topbar">
+
       <a class="logo" href="../index.html">
         <span class="logo-badge">K</span>
+
         <span>
           <strong>Karelma cheat sheets</strong>
           <small>Notatki z przedmiotów zawodowych</small>
         </span>
       </a>
 
-      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Zmień motyw">
+      <button
+        id="themeToggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Zmień motyw"
+      >
         <span>☾</span>
       </button>
+
     </header>
 
-    <main>
-      <section class="subject-hero">
-        <a class="back-link" href="../index.html">← Strona główna</a>
 
-        <div class="subject-kicker">BAZY DANYCH</div>
+    <main>
+
+      <!-- HERO -->
+      <section class="subject-hero">
+
+        <a class="back-link" href="../index.html">
+          ← Strona główna
+        </a>
+
+        <div class="subject-kicker">
+          BAZY DANYCH
+        </div>
 
         <h1>Bazy danych</h1>
 
         <p>
           Notatki, definicje i przykłady z teorii oraz SQL.
         </p>
+
       </section>
 
+
+      <!-- GŁÓWNY UKŁAD -->
       <section class="subject-layout">
+
+
+        <!-- SPIS TREŚCI -->
         <aside class="subject-nav">
-          <div class="nav-label">Spis treści</div>
+
+          <div class="nav-label">
+            Spis treści
+          </div>
 
           <nav>
-            <a class="active" href="#podstawy">01. Podstawy baz danych</a>
-            <a href="#projektowanie">02. Projektowanie bazy</a>
-            <a href="#sql-podstawy">03. SQL — podstawy</a>
-            <a href="#warunki">04. Warunki</a>
-            <a href="#agregaty">05. Funkcje agregujące</a>
-            <a href="#grupowanie">06. Grupowanie</a>
-            <a href="#join">07. Łączenie tabel</a>
-            <a href="#modyfikacja">08. Modyfikacja danych</a>
-            <a href="#struktura">09. Struktura bazy</a>
-            <a href="#administracja">10. Administracja</a>
+            <a class="active" href="#podstawy">
+              01. Podstawy baz danych
+            </a>
+
+            <a href="#projektowanie">
+              02. Projektowanie bazy
+            </a>
+
+            <a href="#sql-podstawy">
+              03. SQL — podstawy
+            </a>
+
+            <a href="#warunki">
+              04. Warunki
+            </a>
+
+            <a href="#agregaty">
+              05. Funkcje agregujące
+            </a>
+
+            <a href="#grupowanie">
+              06. Grupowanie
+            </a>
+
+            <a href="#join">
+              07. Łączenie tabel
+            </a>
+
+            <a href="#modyfikacja">
+              08. Modyfikacja danych
+            </a>
+
+            <a href="#struktura">
+              09. Struktura bazy
+            </a>
+
+            <a href="#administracja">
+              10. Administracja
+            </a>
           </nav>
+
         </aside>
 
+
+
+        <!-- TREŚĆ -->
         <div class="subject-content">
 
+
+          <!-- ====================================================== -->
+          <!-- 01. PODSTAWY BAZ DANYCH -->
+          <!-- ====================================================== -->
+
           <section class="topic-card topic-notes" id="podstawy">
-  <div class="topic-number">01</div>
 
-  <div class="topic-body">
-    <h2>Podstawy baz danych</h2>
-
-    <p class="topic-intro">
-      Baza danych to uporządkowany zbiór informacji, który umożliwia
-      ich przechowywanie, wyszukiwanie, modyfikowanie i usuwanie.
-    </p>
-
-    <h3>Baza danych</h3>
-    <p>
-      <strong>Baza danych</strong> to zbiór powiązanych ze sobą danych,
-      zapisanych w sposób umożliwiający ich łatwe przetwarzanie.
-    </p>
-
-    <div class="example-box">
-      <span class="example-label">Przykład</span>
-      <p>
-        Baza danych szkoły może przechowywać informacje o uczniach,
-        klasach, nauczycielach, przedmiotach i ocenach.
-      </p>
-    </div>
-
-    <h3>Tabela</h3>
-    <p>
-      <strong>Tabela</strong> przechowuje dane dotyczące jednego rodzaju
-      obiektów. Składa się z kolumn i wierszy.
-    </p>
-
-    <div class="simple-table">
-      <div class="table-row table-head">
-        <div>id_ucznia</div>
-        <div>imie</div>
-        <div>nazwisko</div>
-        <div>klasa</div>
-      </div>
-
-      <div class="table-row">
-        <div>1</div>
-        <div>Anna</div>
-        <div>Kowalska</div>
-        <div>4TI</div>
-      </div>
-
-      <div class="table-row">
-        <div>2</div>
-        <div>Jan</div>
-        <div>Nowak</div>
-        <div>4TI</div>
-      </div>
-    </div>
-
-    <h3>Rekord</h3>
-    <p>
-      <strong>Rekord</strong> to jeden wiersz tabeli. Zawiera komplet
-      informacji dotyczących jednego obiektu.
-    </p>
-
-    <div class="definition-line">
-      <span>Przykład rekordu:</span>
-      <code>1 | Anna | Kowalska | 4TI</code>
-    </div>
-
-    <h3>Pole</h3>
-    <p>
-      <strong>Pole</strong> to pojedyncza wartość znajdująca się
-      w tabeli na przecięciu wiersza i kolumny.
-    </p>
-
-    <div class="example-box">
-      <span class="example-label">Przykład</span>
-      <p>
-        Wartość <strong>Anna</strong> w kolumnie
-        <strong>imie</strong> jest jednym polem.
-      </p>
-    </div>
-
-    <h3>Encja</h3>
-    <p>
-      <strong>Encja</strong> to obiekt, o którym chcemy przechowywać
-      informacje w bazie danych.
-    </p>
-
-    <p>Przykładami encji mogą być:</p>
-
-    <ul class="note-list">
-      <li>uczeń,</li>
-      <li>nauczyciel,</li>
-      <li>samochód,</li>
-      <li>produkt,</li>
-      <li>zamówienie.</li>
-    </ul>
-
-    <h3>Atrybut</h3>
-    <p>
-      <strong>Atrybut</strong> to cecha opisująca encję.
-    </p>
-
-    <div class="example-box">
-      <span class="example-label">Przykład</span>
-      <p>
-        Dla encji <strong>Uczeń</strong> atrybutami mogą być:
-        imię, nazwisko, data urodzenia i klasa.
-      </p>
-    </div>
-
-    <h3>Klucz główny</h3>
-    <p>
-      <strong>Klucz główny</strong> (PRIMARY KEY) to pole lub zestaw pól,
-      które jednoznacznie identyfikują każdy rekord w tabeli.
-    </p>
-
-    <div class="definition-line">
-      <span>Przykład:</span>
-      <code>id_ucznia = 1</code>
-    </div>
-
-    <div class="important-box">
-      Każdy rekord powinien mieć inną wartość klucza głównego.
-    </div>
-
-    <h3>Klucz obcy</h3>
-    <p>
-      <strong>Klucz obcy</strong> (FOREIGN KEY) to pole, które odwołuje się
-      do klucza głównego znajdującego się w innej tabeli.
-    </p>
-
-    <p>
-      Dzięki kluczom obcym można tworzyć powiązania pomiędzy tabelami.
-    </p>
-
-    <div class="relation-example">
-      <div class="relation-table">
-        <strong>uczniowie</strong>
-        <span>id_ucznia</span>
-        <span>imie</span>
-        <span>id_klasy</span>
-      </div>
-
-      <div class="relation-arrow">→</div>
-
-      <div class="relation-table">
-        <strong>klasy</strong>
-        <span>id_klasy</span>
-        <span>nazwa</span>
-      </div>
-    </div>
-
-    <h3>Relacja</h3>
-    <p>
-      <strong>Relacja</strong> określa sposób powiązania danych
-      znajdujących się w różnych tabelach.
-    </p>
-
-    <p>Najczęściej spotykane rodzaje relacji:</p>
-
-    <div class="relation-grid">
-      <div>
-        <strong>1 : 1</strong>
-        <span>jeden do jednego</span>
-      </div>
-
-      <div>
-        <strong>1 : N</strong>
-        <span>jeden do wielu</span>
-      </div>
-
-      <div>
-        <strong>N : M</strong>
-        <span>wiele do wielu</span>
-      </div>
-    </div>
-
-    <h3>Najważniejsze pojęcia</h3>
-
-    <div class="summary-grid">
-      <div>
-        <strong>Baza danych</strong>
-        <span>uporządkowany zbiór danych</span>
-      </div>
-
-      <div>
-        <strong>Tabela</strong>
-        <span>zbiór rekordów tego samego typu</span>
-      </div>
-
-      <div>
-        <strong>Rekord</strong>
-        <span>jeden wiersz tabeli</span>
-      </div>
-
-      <div>
-        <strong>Pole</strong>
-        <span>pojedyncza wartość w tabeli</span>
-      </div>
-
-      <div>
-        <strong>Encja</strong>
-        <span>obiekt opisywany w bazie</span>
-      </div>
-
-      <div>
-        <strong>Atrybut</strong>
-        <span>cecha encji</span>
-      </div>
-
-      <div>
-        <strong>Klucz główny</strong>
-        <span>jednoznacznie identyfikuje rekord</span>
-      </div>
-
-      <div>
-        <strong>Klucz obcy</strong>
-        <span>łączy tabelę z inną tabelą</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-          <section class="topic-card topic-notes" id="projektowanie">
-  <div class="topic-number">02</div>
-
-  <div class="topic-body">
-    <h2>Projektowanie bazy danych</h2>
-
-    <p class="topic-intro">
-      Zanim utworzysz tabele w bazie danych, warto najpierw zaplanować,
-      jakie dane będą przechowywane i w jaki sposób będą ze sobą powiązane.
-    </p>
-
-    <h3>Modele baz danych</h3>
-
-<p>
-  <strong>Model danych</strong> określa sposób organizowania,
-  przechowywania oraz łączenia danych w bazie danych.
-</p>
-
-<div class="models-grid">
-
-  <div class="model-card">
-    <span class="model-number">01</span>
-
-    <h4>Model jednorodny</h4>
-
-    <p>
-      Dane są przechowywane w jednakowej, prostej strukturze.
-      Wszystkie elementy mają taki sam zestaw pól.
-    </p>
-
-    <div class="example-box">
-      <span class="example-label">Przykład</span>
-      <p>
-        Lista uczniów zapisana jako zbiór rekordów:
-        imię, nazwisko, klasa i data urodzenia.
-      </p>
-    </div>
-
-    <div class="mini-data">
-      <code>Anna | Kowalska | 4TI | 2008-05-12</code>
-      <code>Jan | Nowak | 4TI | 2008-08-21</code>
-    </div>
-  </div>
-
-
-  <div class="model-card">
-    <span class="model-number">02</span>
-
-    <h4>Model hierarchiczny</h4>
-
-    <p>
-      Dane są uporządkowane w strukturę przypominającą
-      <strong>drzewo</strong>. Jeden element nadrzędny może posiadać
-      wiele elementów podrzędnych.
-    </p>
-
-    <div class="example-box">
-      <span class="example-label">Przykład</span>
-      <p>
-        Struktura szkoły: szkoła zawiera klasy,
-        a każda klasa zawiera uczniów.
-      </p>
-    </div>
-
-    <div class="hierarchy-example">
-      <div>Szkoła</div>
-      <span>↓</span>
-
-      <div>Klasa 4TI</div>
-      <span>↓</span>
-
-      <div class="hierarchy-children">
-        <span>Anna Kowalska</span>
-        <span>Jan Nowak</span>
-        <span>Piotr Wiśniewski</span>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="model-card">
-    <span class="model-number">03</span>
-
-    <h4>Model relacyjny</h4>
-
-    <p>
-      Dane są przechowywane w <strong>tabelach</strong>.
-      Tabele mogą być ze sobą powiązane za pomocą
-      kluczy głównych i obcych.
-    </p>
-
-    <div class="example-box">
-      <span class="example-label">Przykład</span>
-      <p>
-        Osobna tabela <strong>uczniowie</strong> oraz tabela
-        <strong>klasy</strong>. Uczeń jest połączony z klasą
-        za pomocą pola <strong>id_klasy</strong>.
-      </p>
-    </div>
-
-    <div class="relation-example">
-      <div class="relation-table">
-        <strong>uczniowie</strong>
-        <span>id_ucznia</span>
-        <span>imie</span>
-        <span>id_klasy</span>
-      </div>
-
-      <div class="relation-arrow">→</div>
-
-      <div class="relation-table">
-        <strong>klasy</strong>
-        <span>id_klasy</span>
-        <span>nazwa</span>
-      </div>
-    </div>
-
-    <div class="model-note">
-      To obecnie jeden z najczęściej stosowanych modeli baz danych.
-      Wykorzystują go m.in. MySQL, PostgreSQL i MariaDB.
-    </div>
-  </div>
-
-
-  <div class="model-card">
-    <span class="model-number">04</span>
-
-    <h4>Model sieciowy</h4>
-
-    <p>
-      Dane tworzą strukturę przypominającą <strong>sieć</strong>.
-      Jeden element może być powiązany z wieloma innymi elementami.
-    </p>
-
-    <div class="example-box">
-      <span class="example-label">Przykład</span>
-      <p>
-        Uczeń może należeć do wielu kół zainteresowań,
-        a każde koło może mieć wielu uczniów.
-      </p>
-    </div>
-
-    <div class="network-example">
-      <div class="network-node">Anna</div>
-
-      <div class="network-links">
-        <span>Koło programistyczne</span>
-        <span>Koło fotograficzne</span>
-        <span>Robotyka</span>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-    <h3>Diagram E/R</h3>
-    <p>
-      <strong>Diagram E/R</strong> (Entity–Relationship Diagram)
-      to graficzny sposób przedstawienia encji, ich atrybutów
-      oraz relacji pomiędzy nimi.
-    </p>
-
-    <div class="er-example">
-      <div class="er-entity">
-        <strong>UCZEŃ</strong>
-        <span><b>PK</b> id_ucznia</span>
-        <span>imie</span>
-        <span>nazwisko</span>
-        <span><b>FK</b> id_klasy</span>
-      </div>
-
-      <div class="er-relation">
-        <span>należy do</span>
-        <strong>N : 1</strong>
-      </div>
-
-      <div class="er-entity">
-        <strong>KLASA</strong>
-        <span><b>PK</b> id_klasy</span>
-        <span>nazwa</span>
-        <span>profil</span>
-      </div>
-    </div>
-
-    <h3>Encja i atrybuty</h3>
-    <p>
-      <strong>Encja</strong> reprezentuje obiekt, o którym przechowujemy dane.
-      Każda encja posiada określone <strong>atrybuty</strong>.
-    </p>
-
-    <div class="summary-grid">
-      <div>
-        <strong>Encja</strong>
-        <span>Uczeń</span>
-      </div>
-
-      <div>
-        <strong>Atrybuty</strong>
-        <span>id_ucznia, imie, nazwisko, data_urodzenia</span>
-      </div>
-    </div>
-
-    <h3>Klucz główny</h3>
-    <p>
-      Każda tabela powinna posiadać <strong>klucz główny</strong>,
-      który jednoznacznie identyfikuje każdy rekord.
-    </p>
-
-    <div class="definition-line">
-      <span>Przykład:</span>
-      <code>id_ucznia</code>
-    </div>
-
-    <div class="important-box">
-      Klucz główny nie może wskazywać dwóch różnych rekordów.
-      Jego wartość musi być unikalna.
-    </div>
-
-    <h3>Relacje między encjami</h3>
-    <p>
-      Relacja opisuje zależność pomiędzy dwoma encjami.
-      Podczas projektowania określamy również jej
-      <strong>liczebność</strong>.
-    </p>
-
-    <div class="relation-grid">
-      <div>
-        <strong>1 : 1</strong>
-        <span>jeden do jednego</span>
-      </div>
-
-      <div>
-        <strong>1 : N</strong>
-        <span>jeden do wielu</span>
-      </div>
-
-      <div>
-        <strong>N : M</strong>
-        <span>wiele do wielu</span>
-      </div>
-    </div>
-
-    <h3>Relacja 1 : 1</h3>
-    <p>
-      Jednemu rekordowi z pierwszej tabeli odpowiada maksymalnie
-      jeden rekord z drugiej tabeli.
-    </p>
-
-    <div class="example-box">
-      <span class="example-label">Przykład</span>
-      <p>
-        Jeden pracownik ma jedną przypisaną kartę dostępu,
-        a jedna karta dostępu należy do jednego pracownika.
-      </p>
-    </div>
-
-    <h3>Relacja 1 : N</h3>
-    <p>
-      Jednemu rekordowi z pierwszej tabeli może odpowiadać
-      wiele rekordów z drugiej tabeli.
-    </p>
-
-    <div class="example-box">
-      <span class="example-label">Przykład</span>
-      <p>
-        Jedna klasa może mieć wielu uczniów,
-        ale każdy uczeń należy do jednej klasy.
-      </p>
-    </div>
-
-    <div class="relation-example">
-      <div class="relation-table">
-        <strong>klasy</strong>
-        <span>id_klasy</span>
-        <span>nazwa</span>
-      </div>
-
-      <div class="relation-arrow">1 → N</div>
-
-      <div class="relation-table">
-        <strong>uczniowie</strong>
-        <span>id_ucznia</span>
-        <span>imie</span>
-        <span>id_klasy</span>
-      </div>
-    </div>
-
-    <h3>Relacja N : M</h3>
-    <p>
-      Wielu rekordom z jednej tabeli może odpowiadać wiele rekordów
-      z drugiej tabeli.
-    </p>
-
-    <div class="example-box">
-      <span class="example-label">Przykład</span>
-      <p>
-        Jeden uczeń może uczęszczać na wiele zajęć dodatkowych,
-        a na jedne zajęcia może uczęszczać wielu uczniów.
-      </p>
-    </div>
-
-    <div class="important-box">
-      Relację N : M realizuje się w relacyjnej bazie danych
-      za pomocą dodatkowej tabeli pośredniej.
-    </div>
-
-    <div class="bridge-example">
-      <div class="relation-table">
-        <strong>uczniowie</strong>
-        <span>id_ucznia</span>
-      </div>
-
-      <div class="relation-arrow">→</div>
-
-      <div class="relation-table relation-table-highlight">
-        <strong>uczniowie_zajecia</strong>
-        <span>id_ucznia</span>
-        <span>id_zajec</span>
-      </div>
-
-      <div class="relation-arrow">←</div>
-
-      <div class="relation-table">
-        <strong>zajecia</strong>
-        <span>id_zajec</span>
-      </div>
-    </div>
-
-    <h3>Dobór typów danych</h3>
-    <p>
-      Każdy atrybut powinien mieć typ danych odpowiedni
-      do przechowywanych wartości.
-    </p>
-
-    <div class="data-types">
-      <div>
-        <code>INT</code>
-        <span>liczby całkowite</span>
-      </div>
-
-      <div>
-        <code>VARCHAR</code>
-        <span>tekst o określonej maksymalnej długości</span>
-      </div>
-
-      <div>
-        <code>DATE</code>
-        <span>data</span>
-      </div>
-
-      <div>
-        <code>DECIMAL</code>
-        <span>liczby dziesiętne</span>
-      </div>
-
-      <div>
-        <code>BOOLEAN</code>
-        <span>wartość prawda / fałsz</span>
-      </div>
-    </div>
-
-    <h3>Dobre projektowanie</h3>
-
-    <div class="check-list">
-      <div>
-        <span>✓</span>
-        <p>Każda tabela opisuje jeden rodzaj obiektu.</p>
-      </div>
-
-      <div>
-        <span>✓</span>
-        <p>Każda tabela posiada klucz główny.</p>
-      </div>
-
-      <div>
-        <span>✓</span>
-        <p>Atrybuty mają odpowiednio dobrane typy danych.</p>
-      </div>
-
-      <div>
-        <span>✓</span>
-        <p>Relacje między tabelami są jasno określone.</p>
-      </div>
-
-      <div>
-        <span>✓</span>
-        <p>Nie przechowujemy niepotrzebnie tych samych danych w wielu miejscach.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-          <section class="topic-card placeholder" id="sql-podstawy">
-            <div class="topic-number">03</div>
-
-            <div>
-              <h2>SQL — podstawy</h2>
-              <p>SELECT, FROM, WHERE, DISTINCT i ORDER BY.</p>
+            <div class="topic-number">
+              01
             </div>
-          </section>
 
-          <section class="topic-card placeholder" id="warunki">
-            <div class="topic-number">04</div>
+            <div class="topic-body">
 
-            <div>
-              <h2>Warunki</h2>
-              <p>AND, OR, NOT, BETWEEN, IN, LIKE i IS NULL.</p>
-            </div>
-          </section>
+              <h2>Podstawy baz danych</h2>
 
-          <section class="topic-card placeholder" id="agregaty">
-            <div class="topic-number">05</div>
-
-            <div>
-              <h2>Funkcje agregujące</h2>
-              <p>COUNT, SUM, AVG, MIN i MAX.</p>
-            </div>
-          </section>
-
-          <section class="topic-card placeholder" id="grupowanie">
-            <div class="topic-number">06</div>
-
-            <div>
-              <h2>Grupowanie</h2>
-              <p>GROUP BY i HAVING.</p>
-            </div>
-          </section>
-
-          <section class="topic-card placeholder" id="join">
-            <div class="topic-number">07</div>
-
-            <div>
-              <h2>Łączenie tabel</h2>
-              <p>JOIN i praca na danych z wielu tabel.</p>
-            </div>
-          </section>
-
-          <section class="topic-card placeholder" id="modyfikacja">
-            <div class="topic-number">08</div>
-
-            <div>
-              <h2>Modyfikacja danych</h2>
-              <p>INSERT, UPDATE i DELETE.</p>
-            </div>
-          </section>
-
-          <section class="topic-card placeholder" id="struktura">
-            <div class="topic-number">09</div>
-
-            <div>
-              <h2>Struktura bazy</h2>
-              <p>CREATE, ALTER i DROP.</p>
-            </div>
-          </section>
-
-          <section class="topic-card placeholder" id="administracja">
-            <div class="topic-number">10</div>
-
-            <div>
-              <h2>Administracja</h2>
-              <p>
-                Użytkownicy, uprawnienia, kopie zapasowe oraz import i eksport.
+              <p class="topic-intro">
+                Najważniejsze pojęcia związane z bazami danych,
+                ich podziałem oraz modelami organizacji danych.
               </p>
+
+
+
+              <!-- BAZA DANYCH -->
+
+              <h3>Baza danych</h3>
+
+              <p>
+                <strong>Baza danych</strong> to uporządkowany zbiór danych
+                z określonej dziedziny tematycznej, zorganizowany w taki sposób,
+                aby możliwy był łatwy dostęp do zapisanych informacji.
+              </p>
+
+              <div class="example-box">
+                <span class="example-label">Przykład</span>
+
+                <p>
+                  Baza danych szkoły może zawierać informacje o uczniach,
+                  klasach, nauczycielach, przedmiotach i ocenach.
+                </p>
+              </div>
+
+
+
+              <!-- SZBD -->
+
+              <h3>System zarządzania bazą danych</h3>
+
+              <p>
+                <strong>System zarządzania bazą danych</strong>
+                to program zarządzający danymi znajdującymi się w bazie
+                i umożliwiający ich przetwarzanie.
+              </p>
+
+              <div class="important-box">
+                SYSTEM BAZ DANYCH = BAZA DANYCH + SYSTEM ZARZĄDZANIA BAZĄ DANYCH
+              </div>
+
+
+
+              <!-- RDBMS -->
+
+              <h3>RDBMS</h3>
+
+              <p>
+                <strong>RDBMS</strong>
+                (Relational Database Management System)
+                to system zarządzania relacyjną bazą danych.
+              </p>
+
+
+
+              <!-- SQL -->
+
+              <h3>SQL</h3>
+
+              <p>
+                <strong>SQL</strong>
+                (Structured Query Language)
+                to strukturyzowany język zapytań wykorzystywany
+                do pracy z relacyjnymi bazami danych.
+              </p>
+
+              <div class="definition-line">
+                <span>Pełna nazwa:</span>
+                <code>Structured Query Language</code>
+              </div>
+
+
+
+              <!-- RELACYJNE I NIERELACYJNE -->
+
+              <h3>Bazy relacyjne i nierelacyjne</h3>
+
+              <p>
+                Bazy danych można podzielić między innymi na
+                <strong>relacyjne</strong> i <strong>nierelacyjne</strong>.
+              </p>
+
+
+              <div class="comparison-grid">
+
+                <!-- RELACYJNE -->
+
+                <div class="comparison-card">
+
+                  <div class="comparison-title">
+                    SQL
+                  </div>
+
+                  <span class="comparison-subtitle">
+                    bazy relacyjne
+                  </span>
+
+                  <ul class="note-list">
+                    <li>
+                      wykorzystują język SQL do wykonywania zapytań,
+                    </li>
+
+                    <li>
+                      przykładem systemu jest <strong>MySQL</strong>,
+                    </li>
+
+                    <li>
+                      baza danych zawiera tabele,
+                    </li>
+
+                    <li>
+                      tabele składają się z kolumn i wierszy,
+                    </li>
+
+                    <li>
+                      każdy rekord ma określoną strukturę,
+                    </li>
+
+                    <li>
+                      tabele mogą być ze sobą połączone za pomocą relacji.
+                    </li>
+                  </ul>
+
+                </div>
+
+
+                <!-- NIERELACYJNE -->
+
+                <div class="comparison-card">
+
+                  <div class="comparison-title">
+                    NoSQL
+                  </div>
+
+                  <span class="comparison-subtitle">
+                    bazy nierelacyjne
+                  </span>
+
+                  <ul class="note-list">
+
+                    <li>
+                      mogą wykorzystywać różne języki,
+                    </li>
+
+                    <li>
+                      przykładem systemu jest <strong>MongoDB</strong>,
+                    </li>
+
+                    <li>
+                      baza danych może zawierać kolekcje,
+                    </li>
+
+                    <li>
+                      kolekcje zawierają dokumenty,
+                    </li>
+
+                    <li>
+                      dokumenty w jednej kolekcji nie muszą mieć
+                      identycznej struktury,
+                    </li>
+
+                    <li>
+                      w tym ujęciu nie występują relacje pomiędzy tabelami.
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+
+
+
+              <!-- MODELE -->
+
+              <h3>Modele baz danych</h3>
+
+              <p>
+                <strong>Model bazy danych</strong> to zbiór zasad opisujących
+                dane, relacje i powiązania pomiędzy danymi,
+                dozwolone operacje oraz ograniczenia nakładane
+                na dane i wykonywane operacje.
+              </p>
+
+
+              <div class="models-grid">
+
+
+                <!-- MODEL JEDNORODNY -->
+
+                <div class="model-card">
+
+                  <span class="model-number">
+                    01
+                  </span>
+
+                  <h4>Model jednorodny</h4>
+
+                  <p>
+                    Wszystkie dane są umieszczone w jednej tabeli
+                    lub jednym arkuszu.
+                  </p>
+
+                  <p>
+                    Model ten pozwala na łatwe i szybkie odczytywanie danych,
+                    ale przy większej liczbie informacji dane mogą być
+                    trudniejsze do odnalezienia.
+                  </p>
+
+                  <div class="important-box">
+                    Wadą modelu jednorodnego jest duża liczba duplikatów.
+                  </div>
+
+                  <div class="example-box">
+                    <span class="example-label">Przykład</span>
+
+                    <p>
+                      Lista kontaktów przechowywana w jednym arkuszu,
+                      w którym każdy wiersz zawiera nazwisko, miasto,
+                      adres i numer telefonu.
+                    </p>
+                  </div>
+
+                  <div class="mini-data">
+                    <code>
+                      Kowalska Anna | Jelenia Góra | ul. Długa 5 | 555 123 456
+                    </code>
+
+                    <code>
+                      Nowak Jan | Wrocław | ul. Leśna 8 | 555 987 654
+                    </code>
+                  </div>
+
+                </div>
+
+
+
+                <!-- MODEL HIERARCHICZNY -->
+
+                <div class="model-card">
+
+                  <span class="model-number">
+                    02
+                  </span>
+
+                  <h4>Model hierarchiczny</h4>
+
+                  <p>
+                    Dane są zorganizowane w postaci
+                    <strong>drzewa</strong>.
+                  </p>
+
+                  <p>
+                    Istnieje jeden korzeń, czyli element nadrzędny,
+                    oraz elementy podrzędne.
+                  </p>
+
+                  <p>
+                    Jeden element nadrzędny może posiadać wiele elementów
+                    podrzędnych, ale każdy element podrzędny ma tylko
+                    jeden element nadrzędny.
+                  </p>
+
+                  <div class="example-box">
+                    <span class="example-label">Przykład</span>
+
+                    <p>
+                      Struktura szkoły: szkoła jest elementem nadrzędnym,
+                      poniżej znajdują się klasy, administracja i księgowość,
+                      a klasy mogą zawierać konkretnych uczniów.
+                    </p>
+                  </div>
+
+                  <div class="hierarchy-example">
+
+                    <div>
+                      Szkoła
+                    </div>
+
+                    <span>↓</span>
+
+                    <div class="hierarchy-children">
+
+                      <span>Klasy</span>
+                      <span>Administracja</span>
+                      <span>Księgowość</span>
+
+                    </div>
+
+                    <span>↓</span>
+
+                    <div class="hierarchy-children">
+
+                      <span>1TI</span>
+                      <span>2TA</span>
+                      <span>3TI</span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+
+                <!-- MODEL SIECIOWY -->
+
+                <div class="model-card">
+
+                  <span class="model-number">
+                    03
+                  </span>
+
+                  <h4>Model sieciowy</h4>
+
+                  <p>
+                    Model sieciowy może przypominać model hierarchiczny,
+                    jednak gałęzie jednego drzewa mogą być wspólne
+                    z gałęziami innych drzew.
+                  </p>
+
+                  <p>
+                    Oznacza to, że jeden element może być powiązany
+                    z wieloma innymi elementami.
+                  </p>
+
+                  <div class="example-box">
+                    <span class="example-label">Przykład</span>
+
+                    <p>
+                      Firma posiada kilka oddziałów, a te same działy,
+                      np. magazyn lub dział sprzedaży,
+                      mogą być powiązane z kilkoma oddziałami.
+                    </p>
+                  </div>
+
+                  <div class="network-example">
+
+                    <div class="network-node">
+                      Firma
+                    </div>
+
+                    <div class="network-links">
+
+                      <span>Oddział Łódź</span>
+                      <span>Oddział Gdańsk</span>
+                      <span>Oddział Radom</span>
+
+                    </div>
+
+                  </div>
+
+                  <div class="model-note">
+                    Model sieciowy przyczynił się do powstania
+                    modelu relacyjnego.
+                  </div>
+
+                </div>
+
+
+
+                <!-- MODEL OBIEKTOWY -->
+
+                <div class="model-card">
+
+                  <span class="model-number">
+                    04
+                  </span>
+
+                  <h4>Model obiektowy</h4>
+
+                  <p>
+                    Model obiektowy wykorzystuje zasadnicze cechy
+                    technologii obiektowej oraz baz danych.
+                  </p>
+
+                  <div class="example-box">
+                    <span class="example-label">Przykład</span>
+
+                    <p>
+                      W bazie mogą być przechowywane obiekty takie jak
+                      <strong>Samochód</strong>,
+                      <strong>Właściciel</strong>
+                      czy <strong>Silnik</strong>,
+                      posiadające własne właściwości.
+                    </p>
+                  </div>
+
+                </div>
+
+
+
+                <!-- MODEL RELACYJNY -->
+
+                <div class="model-card">
+
+                  <span class="model-number">
+                    05
+                  </span>
+
+                  <h4>Model relacyjny</h4>
+
+                  <p>
+                    Informacje są zapisywane w tabelach
+                    w postaci wierszy i kolumn.
+                  </p>
+
+                  <p>
+                    Tabele tworzą między sobą powiązania
+                    nazywane <strong>relacjami</strong>.
+                  </p>
+
+                  <div class="example-box">
+                    <span class="example-label">Przykład</span>
+
+                    <p>
+                      Tabela <strong>Producent</strong>
+                      może być połączona z tabelą
+                      <strong>Podzespół</strong>
+                      za pomocą identyfikatora producenta.
+                    </p>
+                  </div>
+
+                  <div class="relation-example">
+
+                    <div class="relation-table">
+
+                      <strong>Producent</strong>
+
+                      <span>id_producenta</span>
+                      <span>nazwa</span>
+                      <span>adres</span>
+
+                    </div>
+
+                    <div class="relation-arrow">
+                      →
+                    </div>
+
+                    <div class="relation-table">
+
+                      <strong>Podzespół</strong>
+
+                      <span>id_podzespolu</span>
+                      <span>nazwa_podzespolu</span>
+                      <span>id_producenta</span>
+                      <span>model</span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+
+                <!-- MODEL POSTRELACYJNY -->
+
+                <div class="model-card">
+
+                  <span class="model-number">
+                    06
+                  </span>
+
+                  <h4>Model postrelacyjny</h4>
+
+                  <p>
+                    Powstał w wyniku rozszerzenia relacyjnego
+                    modelu baz danych o elementy umożliwiające
+                    opisanie bardziej skomplikowanej rzeczywistości.
+                  </p>
+
+                  <p>
+                    Może wykorzystywać między innymi:
+                  </p>
+
+                  <ul class="note-list">
+
+                    <li>
+                      złożone struktury danych,
+                    </li>
+
+                    <li>
+                      zagnieżdżone relacje,
+                    </li>
+
+                    <li>
+                      atrybuty wirtualne,
+                    </li>
+
+                    <li>
+                      abstrakcyjne typy danych,
+                    </li>
+
+                    <li>
+                      funkcje rozszerzalne.
+                    </li>
+
+                  </ul>
+
+                  <div class="example-box">
+                    <span class="example-label">Przykład</span>
+
+                    <p>
+                      Rekord może przechowywać bardziej złożoną strukturę,
+                      np. dane klienta wraz z zestawem jego adresów
+                      lub innymi zagnieżdżonymi informacjami.
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+
             </div>
+
           </section>
+
+
+
+
+          <!-- ====================================================== -->
+          <!-- 02. PROJEKTOWANIE BAZY -->
+          <!-- ====================================================== -->
+
+          <section
+            class="topic-card placeholder"
+            id="projektowanie"
+          >
+
+            <div class="topic-number">
+              02
+            </div>
+
+            <div>
+
+              <h2>Projektowanie bazy</h2>
+
+              <p>
+                Diagramy E/R, encje, atrybuty, relacje,
+                klucze oraz normalizacja.
+              </p>
+
+            </div>
+
+          </section>
+
+
+
+
+          <!-- ====================================================== -->
+          <!-- 03. SQL -->
+          <!-- ====================================================== -->
+
+          <section
+            class="topic-card placeholder"
+            id="sql-podstawy"
+          >
+
+            <div class="topic-number">
+              03
+            </div>
+
+            <div>
+
+              <h2>SQL — podstawy</h2>
+
+              <p>
+                SELECT, FROM, WHERE, DISTINCT i ORDER BY.
+              </p>
+
+            </div>
+
+          </section>
+
+
+
+
+          <!-- ====================================================== -->
+          <!-- 04. WARUNKI -->
+          <!-- ====================================================== -->
+
+          <section
+            class="topic-card placeholder"
+            id="warunki"
+          >
+
+            <div class="topic-number">
+              04
+            </div>
+
+            <div>
+
+              <h2>Warunki</h2>
+
+              <p>
+                AND, OR, NOT, BETWEEN, IN, LIKE i IS NULL.
+              </p>
+
+            </div>
+
+          </section>
+
+
+
+
+          <!-- ====================================================== -->
+          <!-- 05. FUNKCJE AGREGUJĄCE -->
+          <!-- ====================================================== -->
+
+          <section
+            class="topic-card placeholder"
+            id="agregaty"
+          >
+
+            <div class="topic-number">
+              05
+            </div>
+
+            <div>
+
+              <h2>Funkcje agregujące</h2>
+
+              <p>
+                COUNT, SUM, AVG, MIN i MAX.
+              </p>
+
+            </div>
+
+          </section>
+
+
+
+
+          <!-- ====================================================== -->
+          <!-- 06. GRUPOWANIE -->
+          <!-- ====================================================== -->
+
+          <section
+            class="topic-card placeholder"
+            id="grupowanie"
+          >
+
+            <div class="topic-number">
+              06
+            </div>
+
+            <div>
+
+              <h2>Grupowanie</h2>
+
+              <p>
+                GROUP BY i HAVING.
+              </p>
+
+            </div>
+
+          </section>
+
+
+
+
+          <!-- ====================================================== -->
+          <!-- 07. ŁĄCZENIE TABEL -->
+          <!-- ====================================================== -->
+
+          <section
+            class="topic-card placeholder"
+            id="join"
+          >
+
+            <div class="topic-number">
+              07
+            </div>
+
+            <div>
+
+              <h2>Łączenie tabel</h2>
+
+              <p>
+                JOIN i praca na danych znajdujących się
+                w kilku tabelach.
+              </p>
+
+            </div>
+
+          </section>
+
+
+
+
+          <!-- ====================================================== -->
+          <!-- 08. MODYFIKACJA DANYCH -->
+          <!-- ====================================================== -->
+
+          <section
+            class="topic-card placeholder"
+            id="modyfikacja"
+          >
+
+            <div class="topic-number">
+              08
+            </div>
+
+            <div>
+
+              <h2>Modyfikacja danych</h2>
+
+              <p>
+                INSERT, UPDATE i DELETE.
+              </p>
+
+            </div>
+
+          </section>
+
+
+
+
+          <!-- ====================================================== -->
+          <!-- 09. STRUKTURA BAZY -->
+          <!-- ====================================================== -->
+
+          <section
+            class="topic-card placeholder"
+            id="struktura"
+          >
+
+            <div class="topic-number">
+              09
+            </div>
+
+            <div>
+
+              <h2>Struktura bazy</h2>
+
+              <p>
+                CREATE, ALTER i DROP.
+              </p>
+
+            </div>
+
+          </section>
+
+
+
+
+          <!-- ====================================================== -->
+          <!-- 10. ADMINISTRACJA -->
+          <!-- ====================================================== -->
+
+          <section
+            class="topic-card placeholder"
+            id="administracja"
+          >
+
+            <div class="topic-number">
+              10
+            </div>
+
+            <div>
+
+              <h2>Administracja</h2>
+
+              <p>
+                Użytkownicy, uprawnienia, kopie zapasowe
+                oraz import i eksport danych.
+              </p>
+
+            </div>
+
+          </section>
+
 
         </div>
+
       </section>
+
     </main>
 
+
+    <!-- FOOTER -->
     <footer>
-      <span>Karelma cheat sheets</span>
-      <span>2026</span>
+
+      <span>
+        Karelma cheat sheets
+      </span>
+
+      <span>
+        2026
+      </span>
+
     </footer>
+
   </div>
 
+
   <script src="../script.js"></script>
+
 </body>
 </html>

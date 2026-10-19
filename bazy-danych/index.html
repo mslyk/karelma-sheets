@@ -284,14 +284,269 @@
   </div>
 </section>
 
-          <section class="topic-card placeholder" id="projektowanie">
-            <div class="topic-number">02</div>
+          <section class="topic-card topic-notes" id="projektowanie">
+  <div class="topic-number">02</div>
 
-            <div>
-              <h2>Projektowanie bazy</h2>
-              <p>Diagramy E/R, relacje oraz normalizacja.</p>
-            </div>
-          </section>
+  <div class="topic-body">
+    <h2>Projektowanie bazy danych</h2>
+
+    <p class="topic-intro">
+      Zanim utworzysz tabele w bazie danych, warto najpierw zaplanować,
+      jakie dane będą przechowywane i w jaki sposób będą ze sobą powiązane.
+    </p>
+
+    <h3>Model danych</h3>
+    <p>
+      <strong>Model danych</strong> opisuje strukturę bazy danych:
+      jakie obiekty będą w niej występować, jakie będą miały cechy
+      oraz jakie zależności zachodzą pomiędzy nimi.
+    </p>
+
+    <div class="example-box">
+      <span class="example-label">Przykład</span>
+      <p>
+        W bazie szkolnej możemy wyróżnić encje:
+        <strong>Uczeń</strong>, <strong>Klasa</strong>,
+        <strong>Nauczyciel</strong> i <strong>Przedmiot</strong>.
+      </p>
+    </div>
+
+    <h3>Diagram E/R</h3>
+    <p>
+      <strong>Diagram E/R</strong> (Entity–Relationship Diagram)
+      to graficzny sposób przedstawienia encji, ich atrybutów
+      oraz relacji pomiędzy nimi.
+    </p>
+
+    <div class="er-example">
+      <div class="er-entity">
+        <strong>UCZEŃ</strong>
+        <span><b>PK</b> id_ucznia</span>
+        <span>imie</span>
+        <span>nazwisko</span>
+        <span><b>FK</b> id_klasy</span>
+      </div>
+
+      <div class="er-relation">
+        <span>należy do</span>
+        <strong>N : 1</strong>
+      </div>
+
+      <div class="er-entity">
+        <strong>KLASA</strong>
+        <span><b>PK</b> id_klasy</span>
+        <span>nazwa</span>
+        <span>profil</span>
+      </div>
+    </div>
+
+    <h3>Encja i atrybuty</h3>
+    <p>
+      <strong>Encja</strong> reprezentuje obiekt, o którym przechowujemy dane.
+      Każda encja posiada określone <strong>atrybuty</strong>.
+    </p>
+
+    <div class="summary-grid">
+      <div>
+        <strong>Encja</strong>
+        <span>Uczeń</span>
+      </div>
+
+      <div>
+        <strong>Atrybuty</strong>
+        <span>id_ucznia, imie, nazwisko, data_urodzenia</span>
+      </div>
+    </div>
+
+    <h3>Klucz główny</h3>
+    <p>
+      Każda tabela powinna posiadać <strong>klucz główny</strong>,
+      który jednoznacznie identyfikuje każdy rekord.
+    </p>
+
+    <div class="definition-line">
+      <span>Przykład:</span>
+      <code>id_ucznia</code>
+    </div>
+
+    <div class="important-box">
+      Klucz główny nie może wskazywać dwóch różnych rekordów.
+      Jego wartość musi być unikalna.
+    </div>
+
+    <h3>Relacje między encjami</h3>
+    <p>
+      Relacja opisuje zależność pomiędzy dwoma encjami.
+      Podczas projektowania określamy również jej
+      <strong>liczebność</strong>.
+    </p>
+
+    <div class="relation-grid">
+      <div>
+        <strong>1 : 1</strong>
+        <span>jeden do jednego</span>
+      </div>
+
+      <div>
+        <strong>1 : N</strong>
+        <span>jeden do wielu</span>
+      </div>
+
+      <div>
+        <strong>N : M</strong>
+        <span>wiele do wielu</span>
+      </div>
+    </div>
+
+    <h3>Relacja 1 : 1</h3>
+    <p>
+      Jednemu rekordowi z pierwszej tabeli odpowiada maksymalnie
+      jeden rekord z drugiej tabeli.
+    </p>
+
+    <div class="example-box">
+      <span class="example-label">Przykład</span>
+      <p>
+        Jeden pracownik ma jedną przypisaną kartę dostępu,
+        a jedna karta dostępu należy do jednego pracownika.
+      </p>
+    </div>
+
+    <h3>Relacja 1 : N</h3>
+    <p>
+      Jednemu rekordowi z pierwszej tabeli może odpowiadać
+      wiele rekordów z drugiej tabeli.
+    </p>
+
+    <div class="example-box">
+      <span class="example-label">Przykład</span>
+      <p>
+        Jedna klasa może mieć wielu uczniów,
+        ale każdy uczeń należy do jednej klasy.
+      </p>
+    </div>
+
+    <div class="relation-example">
+      <div class="relation-table">
+        <strong>klasy</strong>
+        <span>id_klasy</span>
+        <span>nazwa</span>
+      </div>
+
+      <div class="relation-arrow">1 → N</div>
+
+      <div class="relation-table">
+        <strong>uczniowie</strong>
+        <span>id_ucznia</span>
+        <span>imie</span>
+        <span>id_klasy</span>
+      </div>
+    </div>
+
+    <h3>Relacja N : M</h3>
+    <p>
+      Wielu rekordom z jednej tabeli może odpowiadać wiele rekordów
+      z drugiej tabeli.
+    </p>
+
+    <div class="example-box">
+      <span class="example-label">Przykład</span>
+      <p>
+        Jeden uczeń może uczęszczać na wiele zajęć dodatkowych,
+        a na jedne zajęcia może uczęszczać wielu uczniów.
+      </p>
+    </div>
+
+    <div class="important-box">
+      Relację N : M realizuje się w relacyjnej bazie danych
+      za pomocą dodatkowej tabeli pośredniej.
+    </div>
+
+    <div class="bridge-example">
+      <div class="relation-table">
+        <strong>uczniowie</strong>
+        <span>id_ucznia</span>
+      </div>
+
+      <div class="relation-arrow">→</div>
+
+      <div class="relation-table relation-table-highlight">
+        <strong>uczniowie_zajecia</strong>
+        <span>id_ucznia</span>
+        <span>id_zajec</span>
+      </div>
+
+      <div class="relation-arrow">←</div>
+
+      <div class="relation-table">
+        <strong>zajecia</strong>
+        <span>id_zajec</span>
+      </div>
+    </div>
+
+    <h3>Dobór typów danych</h3>
+    <p>
+      Każdy atrybut powinien mieć typ danych odpowiedni
+      do przechowywanych wartości.
+    </p>
+
+    <div class="data-types">
+      <div>
+        <code>INT</code>
+        <span>liczby całkowite</span>
+      </div>
+
+      <div>
+        <code>VARCHAR</code>
+        <span>tekst o określonej maksymalnej długości</span>
+      </div>
+
+      <div>
+        <code>DATE</code>
+        <span>data</span>
+      </div>
+
+      <div>
+        <code>DECIMAL</code>
+        <span>liczby dziesiętne</span>
+      </div>
+
+      <div>
+        <code>BOOLEAN</code>
+        <span>wartość prawda / fałsz</span>
+      </div>
+    </div>
+
+    <h3>Dobre projektowanie</h3>
+
+    <div class="check-list">
+      <div>
+        <span>✓</span>
+        <p>Każda tabela opisuje jeden rodzaj obiektu.</p>
+      </div>
+
+      <div>
+        <span>✓</span>
+        <p>Każda tabela posiada klucz główny.</p>
+      </div>
+
+      <div>
+        <span>✓</span>
+        <p>Atrybuty mają odpowiednio dobrane typy danych.</p>
+      </div>
+
+      <div>
+        <span>✓</span>
+        <p>Relacje między tabelami są jasno określone.</p>
+      </div>
+
+      <div>
+        <span>✓</span>
+        <p>Nie przechowujemy niepotrzebnie tych samych danych w wielu miejscach.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
           <section class="topic-card placeholder" id="sql-podstawy">
             <div class="topic-number">03</div>

@@ -3,130 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Kompendium informatyczne — notatki z przedmiotów zawodowych." />
-  <title>Kompendium informatyczne</title>
+  <meta name="description" content="Karelma cheat sheets — notatki z przedmiotów zawodowych." />
+  <title>Karelma cheat sheets</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <div class="page-shell">
-    <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Strona główna">
-        <span class="brand-mark">&lt;/&gt;</span>
-        <span class="brand-text">
-          <strong>Kompendium informatyczne</strong>
+  <div class="noise"></div>
+
+  <div class="page">
+    <header class="topbar">
+      <a class="logo" href="index.html">
+        <span class="logo-badge">K</span>
+        <span>
+          <strong>Karelma cheat sheets</strong>
           <small>Notatki z przedmiotów zawodowych</small>
         </span>
       </a>
 
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Zmień motyw">
-        <span class="theme-icon">☾</span>
-      </button>
+      <div class="top-actions">
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Zmień motyw">
+          <span>☾</span>
+        </button>
+      </div>
     </header>
 
     <main>
       <section class="hero">
-        <div class="hero-copy">
-          <span class="eyebrow">TECHNIK INFORMATYK</span>
-          <h1>Wybierz przedmiot</h1>
-          <p>
-            Krótkie definicje, najważniejsze informacje i przykłady
-            z tematów omawianych na zajęciach.
+        <div class="hero-left">
+<h1>Wybierz przedmiot</h1>
+
+          <p class="hero-text">
+            Tutaj znajdziesz wszystkie notatki z lekcji, najważniejsze definicje, przykłady i informacje uporządkowane według przedmiotów.
           </p>
-        </div>
+</div>
 
-        <div class="hero-badge" aria-hidden="true">
-          <span>4</span>
-          <small>przedmioty</small>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+
+          <div class="terminal-card">
+            <div class="terminal-head">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="terminal-lines">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-head">
+        <div>
+          <span class="section-no">01</span>
+          <h2>Przedmioty</h2>
         </div>
       </section>
 
-      <section class="subjects" aria-label="Przedmioty">
-        <a class="subject-card databases" href="#" data-status="soon">
-          <div class="subject-top">
-            <span class="subject-icon">DB</span>
-            <span class="status">wkrótce</span>
+      <section class="subjects">
+        <a href="#" class="subject-card subject-db" data-status="soon">
+          <div class="card-index">01</div>
+          <div class="card-top">
+            <span class="card-icon">DB</span>
           </div>
-          <div>
-            <h2>Bazy danych</h2>
-            <p>Teoria i praktyka</p>
+
+          <div class="card-content">
+            <h3>Bazy danych</h3>
           </div>
-          <div class="subject-footer">
-            <span>SQL · relacje · projektowanie</span>
-            <span class="arrow">→</span>
+
+          <div class="card-bottom">
+            <span class="card-arrow">↗</span>
           </div>
         </a>
 
-        <a class="subject-card web" href="#" data-status="soon">
-          <div class="subject-top">
-            <span class="subject-icon">&lt;/&gt;</span>
-            <span class="status">wkrótce</span>
+        <a href="#" class="subject-card subject-web" data-status="soon">
+          <div class="card-index">02</div>
+          <div class="card-top">
+            <span class="card-icon">&lt;/&gt;</span>
           </div>
-          <div>
-            <h2>Witryny i aplikacje internetowe</h2>
-            <p>Teoria i praktyka</p>
+
+          <div class="card-content">
+            <h3>Witryny i aplikacje internetowe</h3>
           </div>
-          <div class="subject-footer">
-            <span>HTML · CSS · JavaScript · PHP</span>
-            <span class="arrow">→</span>
+
+          <div class="card-bottom">
+            <span class="card-arrow">↗</span>
           </div>
         </a>
 
-        <a class="subject-card hardware" href="#" data-status="soon">
-          <div class="subject-top">
-            <span class="subject-icon">PC</span>
-            <span class="status">wkrótce</span>
+        <a href="#" class="subject-card subject-hardware" data-status="soon">
+          <div class="card-index">03</div>
+          <div class="card-top">
+            <span class="card-icon">PC</span>
           </div>
-          <div>
-            <h2>Urządzenia techniki komputerowej</h2>
-            <p>Teoria</p>
+
+          <div class="card-content">
+            <h3>Urządzenia techniki komputerowej</h3>
           </div>
-          <div class="subject-footer">
-            <span>podzespoły · peryferia · diagnostyka</span>
-            <span class="arrow">→</span>
+
+          <div class="card-bottom">
+            <span class="card-arrow">↗</span>
           </div>
         </a>
 
-        <a class="subject-card networks" href="#" data-status="soon">
-          <div class="subject-top">
-            <span class="subject-icon">LAN</span>
-            <span class="status">wkrótce</span>
+        <a href="#" class="subject-card subject-network" data-status="soon">
+          <div class="card-index">04</div>
+          <div class="card-top">
+            <span class="card-icon">LAN</span>
           </div>
-          <div>
-            <h2>Sieci komputerowe</h2>
-            <p>Teoria</p>
+
+          <div class="card-content">
+            <h3>Sieci komputerowe</h3>
           </div>
-          <div class="subject-footer">
-            <span>OSI · TCP/IP · adresacja · urządzenia</span>
-            <span class="arrow">→</span>
+
+          <div class="card-bottom">
+            <span class="card-arrow">↗</span>
           </div>
         </a>
       </section>
+</main>
 
-      <section class="info-strip">
-        <div>
-          <strong>Jak korzystać?</strong>
-          <span>Wybierz przedmiot, a następnie temat z listy.</span>
-        </div>
-        <div>
-          <strong>Forma</strong>
-          <span>Definicje, składnia, przykłady i najczęstsze błędy.</span>
-        </div>
-        <div>
-          <strong>Bez ćwiczeń</strong>
-          <span>Ta strona ma być szybkim kompendium do powtórek.</span>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <span>Kompendium informatyczne</span>
-      <span>Materiały pomocnicze do zajęć</span>
+    <footer>
+      <span>Karelma cheat sheets</span>
+      <span>2026</span>
     </footer>
   </div>
 
